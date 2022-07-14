@@ -35,20 +35,19 @@ const Home = () => {
 };
 
 const AppTitle = styled.Text`
-    font-size: 36;
+    font-size: 36px;
 `;
 
 const CoworkContainer = styled.View`
-    width: 338;
-    height: 200;
+    width: 338px;
+    height: 200px;
     background-color: '#E9EBEE';
 `;
 
 const MyInfoContainer = styled.View`
-    width: 340;
-    height: 70;
-    border-radius: 6;
+    width: 340px;
+    height: 70px;
+    border-radius: 10px;
     background-color: '#E5EBF4';
 `;
-
 export default Home;
