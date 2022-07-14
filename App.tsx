@@ -1,5 +1,5 @@
-import styled from '@emotion/native';
 import { useFonts } from 'expo-font';
+import { SafeAreaView } from 'react-native';
 
 import Home from './src/screens/home';
 
@@ -21,12 +21,10 @@ const App = () => {
     }
 
     return (
-        <Container>
+        <SafeAreaView>
             <Home />
-        </Container>
+        </SafeAreaView>
     );
 };
-
-const Container = styled.View``;
 
 export default App;
