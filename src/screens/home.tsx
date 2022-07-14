@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import styled from '@emotion/native';
 
 const Home = () => {
     return (
         <View>
-            <Text style={styles.name}>E-cowork</Text>
-            <View style={styles.info__container}>
+            <AppTitle>E-cowork</AppTitle>
+            <MyInfoContainer>
                 <View>
                     <Text>등급</Text>
                     <Text>BLUE</Text>
@@ -15,10 +16,10 @@ const Home = () => {
                     <Text>830 P</Text>
                 </View>
                 <Image source={require('../assets/images/img_profile.png')} />
-            </View>
-            <View style={styles.cowork}>
+            </MyInfoContainer>
+            <CoworkContainer>
                 <Text>지구 재생 진행도</Text>
-            </View>
+            </CoworkContainer>
             <View style={{ backgroundColor: '#FFDCDC' }}>
                 <Image source={require('../assets/images/icn_recycle.png')} />
                 <Text>불필요한 상품 공유</Text>
@@ -33,25 +34,21 @@ const Home = () => {
     );
 };
 
+const AppTitle = styled.Text`
+    font-size: 36;
+`;
+
+const CoworkContainer = styled.View`
+    width: 338;
+    height: 200;
+    background-color: '#E9EBEE';
+`;
+
+const MyInfoContainer = styled.View`
+    width: 340;
+    height: 70;
+    border-radius: 6;
+    background-color: '#E5EBF4';
+`;
+
 export default Home;
-
-const styles = StyleSheet.create({
-    name: {
-        color: '#01D94B',
-        fontSize: 36,
-        //폰트 pretendard 전역 폰트 설정하기
-    },
-
-    cowork: {
-        width: 338,
-        height: 200,
-        backgroundColor: '#E9EBEE',
-    },
-
-    info__container: {
-        width: 340,
-        height: 70,
-        borderRadius: 6,
-        backgroundColor: '#E5EBF4',
-    },
-});
