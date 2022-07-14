@@ -35,7 +35,15 @@ const Home = () => {
 };
 
 const AppTitle = styled.Text`
+    display: flex;
+    font-family: 'Pretendard-SemiBold';
     font-size: 36px;
+    line-height: 17px;
+    letter-spacing: -0.5px;
+    color: #01d94b;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 77px;
+    padding-left: 25px;
 `;
 
 const CoworkContainer = styled.View`
