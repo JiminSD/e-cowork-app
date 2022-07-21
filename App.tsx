@@ -1,5 +1,6 @@
+import styled from '@emotion/native';
 import { useFonts } from 'expo-font';
-import { SafeAreaView } from 'react-native';
+import { StatusBar } from 'react-native';
 
 import Home from './src/screens/home';
 
@@ -21,10 +22,14 @@ const App = () => {
     }
 
     return (
-        <SafeAreaView>
+        <Container>
             <Home />
-        </SafeAreaView>
+        </Container>
     );
 };
+
+const Container = styled.SafeAreaView`
+    margin-top: ${StatusBar.currentHeight + 'px' || 0 + 'px'};
+`;
 
 export default App;

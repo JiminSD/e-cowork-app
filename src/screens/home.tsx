@@ -88,7 +88,7 @@ const AppTitle = styled.Text`
     font-size: 36px;
     color: #01d94b;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    margin: 50px 0 25px 0;
+    margin: 25px 0;
 `;
 
 const MyInfoContainer = styled.View`
