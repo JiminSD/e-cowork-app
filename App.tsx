@@ -4,6 +4,7 @@ import { RootStackParamList } from './src/screens/RootStackPrams';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
+import { StatusBar } from 'react-native';
 
 import Home from './src/screens/home';
 import SharingEconomy from './src/screens/SharingEconomy';
@@ -30,6 +31,7 @@ const App = () => {
 
     return (
         <SafeAreaProvider>
+            <StatusBar backgroundColor="#fff" barStyle="dark-content" />
             <NavigationContainer>
                 <RootStack.Navigator
                     initialRouteName="Home"
