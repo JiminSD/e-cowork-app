@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './RootStackPrams';
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 import { Image } from 'react-native';
 import styled from '@emotion/native';
 
-const Home = () => {
-    const [amount, setAmount] = useState<number>(800);
+type Props = StackNavigationProp<RootStackParamList, 'Home'>;
 
-    const onPress = (b: boolean) => {
-        if (b) {
-            setAmount(amount + 1);
-        } else {
-            setAmount(amount - 1);
-        }
-    };
+const Home = () => {
+    const navigation = useNavigation<Props>();
+    const [amount, setAmount] = useState<number>(800);
 
     return (
         <Container>
@@ -50,9 +48,7 @@ const Home = () => {
             </CoworkContainer>
             <BtnContainer>
                 <Btn
-                    onPress={() => {
-                        onPress(true);
-                    }}
+                    onPress={() => navigation.navigate('SharingEconomy')}
                     style={{ backgroundColor: '#FFDCDC' }}
                 >
                     <Image
@@ -62,9 +58,7 @@ const Home = () => {
                     <BtnTitle>공유경제</BtnTitle>
                 </Btn>
                 <Btn
-                    onPress={() => {
-                        onPress(false);
-                    }}
+                    onPress={() => navigation.navigate('Mission')}
                     style={{ backgroundColor: '#D9FFCB' }}
                 >
                     <Image

@@ -1,8 +1,13 @@
-import styled from '@emotion/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { RootStackParamList } from './src/screens/RootStackPrams';
+import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { StatusBar } from 'react-native';
 
 import Home from './src/screens/home';
+import SharingEconomy from './src/screens/SharingEconomy';
+import Mission from './src/screens/Mission';
+
+const RootStack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
     const [loaded] = useFonts({
@@ -22,14 +27,20 @@ const App = () => {
     }
 
     return (
-        <Container>
-            <Home />
-        </Container>
+        <NavigationContainer>
+            <RootStack.Navigator
+                initialRouteName="Home"
+                screenOptions={{ headerShown: false }}
+            >
+                <RootStack.Screen name="Home" component={Home} />
+                <RootStack.Screen
+                    name="SharingEconomy"
+                    component={SharingEconomy}
+                />
+                <RootStack.Screen name="Mission" component={Mission} />
+            </RootStack.Navigator>
+        </NavigationContainer>
     );
 };
-
-const Container = styled.SafeAreaView`
-    margin-top: ${StatusBar.currentHeight + 'px' || 0 + 'px'};
-`;
 
 export default App;

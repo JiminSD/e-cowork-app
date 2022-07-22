@@ -1,10 +1,21 @@
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../screens/RootStackPrams';
+import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 import styled from '@emotion/native';
 
+type Props = StackNavigationProp<RootStackParamList, 'Home'>;
+
 const BackHeader = () => {
+    const navigation = useNavigation<Props>();
+
+    const onPress = () => {
+        navigation.navigate('Home');
+    };
+
     return (
         <Container>
-            <BackBtn>
+            <BackBtn onPress={onPress}>
                 <Image
                     source={require('../assets/images/icn_arrow_left.png')}
                 />
