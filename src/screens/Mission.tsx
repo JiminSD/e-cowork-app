@@ -88,8 +88,7 @@ const BoxTitle = styled.Text`
 
 const ImageUploadContainer = styled.View`
     width: 300px;
-    height: 160px;
-    margin: 80px 0 74px 0;
+    margin: 32px 0 74px 0;
     border: 1px solid #dee2e6;
     border-radius: 8px;
 `;
@@ -100,6 +99,7 @@ const UploadBtn = styled.TouchableOpacity`
 `;
 
 const UploadText = styled.Text`
+    margin: 10px 0;
     font-family: 'Pretendard-Medium';
     font-size: 18px;
 `;
