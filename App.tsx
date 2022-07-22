@@ -9,6 +9,7 @@ import { StatusBar } from 'react-native';
 import Home from './src/screens/home';
 import SharingEconomy from './src/screens/SharingEconomy';
 import Mission from './src/screens/Mission';
+import Camera from './src/screens/Camera';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -48,6 +49,7 @@ const App = () => {
                         component={SharingEconomy}
                     />
                     <RootStack.Screen name="Mission" component={Mission} />
+                    <RootStack.Screen name="Camera" component={Camera} />
                 </RootStack.Navigator>
             </NavigationContainer>
         </SafeAreaProvider>
