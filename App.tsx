@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList } from './src/screens/RootStackPrams';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -32,7 +33,12 @@ const App = () => {
             <NavigationContainer>
                 <RootStack.Navigator
                     initialRouteName="Home"
-                    screenOptions={{ headerShown: false }}
+                    screenOptions={{
+                        headerShown: false,
+                        cardStyle: {
+                            backgroundColor: 'white',
+                        },
+                    }}
                 >
                     <RootStack.Screen name="Home" component={Home} />
                     <RootStack.Screen
