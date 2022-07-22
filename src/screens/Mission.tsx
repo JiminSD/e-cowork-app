@@ -1,3 +1,6 @@
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './RootStackPrams';
+import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'react-native';
 import styled from '@emotion/native';
@@ -5,7 +8,15 @@ import styled from '@emotion/native';
 import BackHeader from '../components/BackHeader';
 import Checkbox from '../components/Checkbox';
 
+type Props = StackNavigationProp<RootStackParamList, 'Mission'>;
+
 const Mission = () => {
+    const navigation = useNavigation<Props>();
+
+    const onPress = () => {
+        navigation.navigate('Camera');
+    };
+
     return (
         <SafeAreaView>
             <BackHeader />
@@ -20,7 +31,7 @@ const Mission = () => {
                 </CheckboxContainer>
                 <ImageUploadContainer>
                     <BoxTitle>라벨택 제거</BoxTitle>
-                    <UploadBtn>
+                    <UploadBtn onPress={onPress}>
                         <Image
                             source={require('../assets/images/icn_upload.png')}
                         />
