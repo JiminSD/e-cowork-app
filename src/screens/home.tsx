@@ -13,7 +13,7 @@ const Home = () => {
     const [amount, setAmount] = useState<number>(800);
 
     return (
-        <SafeAreaView style={SafeAreaViewStyle}>
+        <SafeAreaView style={safeAreaViewStyle}>
             <AppTitle>E-cowork</AppTitle>
             <MyInfoContainer>
                 <MyInfoContentContainer>
@@ -73,7 +73,7 @@ const Home = () => {
     );
 };
 
-const SafeAreaViewStyle = css`
+const safeAreaViewStyle = css`
     margin: 0 auto;
 `;
 

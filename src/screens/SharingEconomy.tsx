@@ -22,7 +22,7 @@ const SharingEconomy = () => {
     }) => <PostItem title={item.title} point={item.point} />;
 
     return (
-        <SafeAreaView style={SafeAreaViewStyle}>
+        <SafeAreaView style={safeAreaViewStyle}>
             <BackHeader />
             <FlatList
                 data={DATA}
@@ -34,7 +34,7 @@ const SharingEconomy = () => {
     );
 };
 
-const SafeAreaViewStyle = css`
+const safeAreaViewStyle = css`
     margin: 0 auto;
 `;
 
