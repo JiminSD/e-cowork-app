@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList } from './src/screens/RootStackPrams';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 
@@ -27,19 +28,21 @@ const App = () => {
     }
 
     return (
-        <NavigationContainer>
-            <RootStack.Navigator
-                initialRouteName="Home"
-                screenOptions={{ headerShown: false }}
-            >
-                <RootStack.Screen name="Home" component={Home} />
-                <RootStack.Screen
-                    name="SharingEconomy"
-                    component={SharingEconomy}
-                />
-                <RootStack.Screen name="Mission" component={Mission} />
-            </RootStack.Navigator>
-        </NavigationContainer>
+        <SafeAreaProvider>
+            <NavigationContainer>
+                <RootStack.Navigator
+                    initialRouteName="Home"
+                    screenOptions={{ headerShown: false }}
+                >
+                    <RootStack.Screen name="Home" component={Home} />
+                    <RootStack.Screen
+                        name="SharingEconomy"
+                        component={SharingEconomy}
+                    />
+                    <RootStack.Screen name="Mission" component={Mission} />
+                </RootStack.Navigator>
+            </NavigationContainer>
+        </SafeAreaProvider>
     );
 };
 

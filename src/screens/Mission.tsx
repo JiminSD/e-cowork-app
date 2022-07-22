@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'react-native';
 import styled from '@emotion/native';
 
@@ -35,7 +36,7 @@ const Checkbox = (props: Props) => {
 
 const Mission = () => {
     return (
-        <Container>
+        <SafeAreaView>
             <BackHeader />
             <MissionContainer>
                 <Title>미션 인증</Title>
@@ -56,11 +57,9 @@ const Mission = () => {
                     </UploadBtn>
                 </ImageUploadContainer>
             </MissionContainer>
-        </Container>
+        </SafeAreaView>
     );
 };
-
-const Container = styled.View``;
 
 const MissionContainer = styled.View`
     margin: 0 auto;

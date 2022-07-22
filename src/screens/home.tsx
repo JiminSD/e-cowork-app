@@ -2,8 +2,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from './RootStackPrams';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'react-native';
-import styled from '@emotion/native';
+import styled, { css } from '@emotion/native';
 
 type Props = StackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -12,7 +13,7 @@ const Home = () => {
     const [amount, setAmount] = useState<number>(800);
 
     return (
-        <Container>
+        <SafeAreaView style={SafeAreaViewStyle}>
             <AppTitle>E-cowork</AppTitle>
             <MyInfoContainer>
                 <MyInfoContentContainer>
@@ -68,11 +69,11 @@ const Home = () => {
                     <BtnTitle>미션인증</BtnTitle>
                 </Btn>
             </BtnContainer>
-        </Container>
+        </SafeAreaView>
     );
 };
 
-const Container = styled.View`
+const SafeAreaViewStyle = css`
     margin: 0 auto;
 `;
 

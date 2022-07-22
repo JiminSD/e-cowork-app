@@ -1,5 +1,6 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList } from 'react-native';
-import styled from '@emotion/native';
+import { css } from '@emotion/native';
 
 import BackHeader from '../components/BackHeader';
 import PostItem from '../components/PostItem';
@@ -21,19 +22,19 @@ const SharingEconomy = () => {
     }) => <PostItem title={item.title} point={item.point} />;
 
     return (
-        <Container>
+        <SafeAreaView style={SafeAreaViewStyle}>
             <BackHeader />
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
                 keyExtractor={item => item.title}
                 numColumns={2}
-            ></FlatList>
-        </Container>
+            />
+        </SafeAreaView>
     );
 };
 
-const Container = styled.View`
+const SafeAreaViewStyle = css`
     margin: 0 auto;
 `;
 
